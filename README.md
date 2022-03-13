@@ -1,3 +1,4 @@
+![Capstone_1 Schema](https://user-images.githubusercontent.com/91699314/158044295-102581cd-fb7c-40b0-8fa6-00318c5b84a3.PNG)
 # capstone_1
 
 Capstone Project #1 Proposal - 
