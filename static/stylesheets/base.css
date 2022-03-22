@@ -1,0 +1,63 @@
+.container {
+    text-align: center;
+}
+
+a {
+    margin-bottom: 10px;
+}
+
+.card:hover {
+    background-color: rgba(209, 209, 209, 0.425);
+} 
+
+.card {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.link:hover {
+    text-decoration: none;
+}
+
+.card-title {
+    text-decoration: none;
+    color: black;
+}
+
+textarea {
+    width: 100%;
+}
+
+.board {
+    padding-top: 75px;
+    padding-bottom: 75px;
+    color: black;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.board:hover {
+    text-decoration: none;
+    color: black;
+}
+
+#flash {
+    text-align: left;
+}
+
+#recipe {
+    text-align: left;
+}
+
+p {
+    font-size: 1rem;
+}
+
+#new-ingredient-button {
+    color: white;
+}
+
+.instructions-input {
+    height: 100px;
+    width: 400px;
+}

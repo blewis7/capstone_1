@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    <h1>{{user.first_name}} {{user.last_name}}</h1>
+    <h3>Username: {{user.username}}</h3>
+    <form>
+        <a class="btn btn-danger" href="/users/delete">Delete My Profile</a>
+    </form>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6 col-md-4">
+                <a class="board" href="/users/created-recipes">
+                    <div class="card board">
+                        <h2 class="card-img-top">My Recipes</h2>
+                        <p>{{user.created_recipes | length}} Recipes</p>
+                    </div>  
+                </a>   
+            </div>
+        {% for board in boards %}
+            <div class="col-6 col-md-4">
+                
+                <a class="board" href="/boards/{{board.id}}">
+                    <div class="card board">
+                        <h2 class="card-img-top">{{board.name}}</h2>
+                        <p>{{board.recipe_ids | length}} Recipes</p>
+                    </div>
+                    
+                </a>
+            </div>
+        {% endfor %}
+        </div>
+        <br>
+        <a class="btn btn-success" href="/users/boards/new">Create Board</a>
+    </div>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    <h1>Create New Recipe</h1>
+    <small>Note: (When filling out ingredients, include amount, unit, ingredient 
+    <br> 
+    Example: 1/2 cup Milk)</small>
+    <br>
+    <br>
+    <form method='POST'>
+        {{form.hidden_tag()}}
+
+        <div>
+            {{form.title.label()}}
+            {{form.title}}
+        </div>
+
+        <div>
+            {{form.image.label()}}
+            {{form.image}}
+        </div>
+
+        <div class="ingredients">
+            <div>
+                {{form.ingredient_1.label()}}
+                {{form.ingredient_1}}
+            </div>
+            
+            <div>
+                {{form.ingredient_2.label()}}
+                {{form.ingredient_2}}
+            </div>
+    
+        </div>
+        <a class="btn btn-primary" id="new-ingredient-button">Add Ingredient</a>  
+        
+        <div>
+            {{form.instructions.label()}}
+            {{form.instructions(class='instructions-input')}}
+        </div>
+        
+
+        <button>Create</button>
+    </form>
+</div>
+
+<script>
+
+    let currNum = 3;
+    const $ingredients = $(".ingredients");
+
+    $("#new-ingredient-button").on('click', function addIngredient(){
+        let childElement = `
+        <div>
+            <label for="ingredient_${currNum}">Ingredient: </label>
+            <input id="ingredient_${currNum}" name="ingredient_${currNum}" required type="text">
+        </div>
+        `
+        $ingredients.append(childElement);
+        currNum++;
+        if (currNum === 21){
+            $("#new-ingredient-button").remove();
+        };
+    });
+
+</script>
+
+{% endblock %}
